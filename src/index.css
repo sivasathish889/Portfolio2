@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: "Querencia";
+    src: local("Querencia"), url(./assets/font/querencia/Querencia\ Regular.ttf), format("truetype");
+}

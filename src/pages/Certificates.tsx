@@ -1,8 +1,7 @@
-import React from 'react'
 
 const Certificates = () => {
   return (
-    <div>Certificates</div>
+    <div className=" bg-lime-500">Certificates</div>
   )
 }
 

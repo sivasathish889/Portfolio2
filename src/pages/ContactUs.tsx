@@ -1,8 +1,7 @@
-import React from 'react'
 
 const ContactUs = () => {
   return (
-    <div>ContactUs</div>
+    <div className=" bg-purple-900">ContactUs</div>
   )
 }
 

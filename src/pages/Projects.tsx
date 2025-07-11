@@ -1,8 +1,7 @@
-import React from 'react'
 
 const Projects = () => {
   return (
-    <div>Projects</div>
+    <div className=" bg-emerald-600">Projects</div>
   )
 }
 

@@ -1,8 +1,7 @@
-import React from 'react'
 
 const Skills = () => {
   return (
-    <div>Skills</div>
+    <div className=' bg-green-600'>Skills</div>
   )
 }
 
