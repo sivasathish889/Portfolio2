@@ -1,7 +1,10 @@
-import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Sun, Moon} from "lucide-react"
+import { useTheme } from "../context/ThemeProvider";
 const NavBar = () => {
   const [stickyNav, setStickyNav] = useState<number>(0);
+  const {theme,toggleTheme } = useTheme();
 
   function stickNavbar() {
     let windowHeight = window.scrollY;
@@ -12,59 +15,66 @@ const NavBar = () => {
     window.addEventListener("scroll", stickNavbar);
   }, []);
   return (
-    <div className="m-3 flex justify-between text-white">
+    <div className={`m-3 flex justify-between items-center`}>
       <div
-        className="logo text-4xl"
+        className="logo text-4xl flex items-center gap-11"
         data-aos="fade-right"
         data-aos-delay="100"
         data-aos-duration="1000"
       >
         <p>Shiva</p>
+        {theme === "light" ? <Sun onClick={toggleTheme} className="cursor-pointer"/> : <Moon onClick={toggleTheme} className="cursor-pointer"/>}
       </div>
       <div className="left-container flex gap-5 text-sm lg:visible">
         <div className="nav-links flex flex-col not-lg:hidden ">
-          <a
+          <motion.a
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.1 }}
             href="#about"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            data-aos-delay="200"
+            className="hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-transform hover:underline"
           >
             About
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
             href="#skills"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            data-aos-delay="500"
+            className="hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-transform hover:underline"
           >
             Skills
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
             href="#projects"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            data-aos-delay="700"
+            className="hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-transform hover:underline"
           >
             Projects
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            className="hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-transform hover:underline"
+            transition={{ duration: 1, delay: 0.7 }}
             href="#certificates"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            data-aos-delay="900"
           >
             Cerificates
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            className="hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-transform hover:underline"
+            transition={{ duration: 1, delay: 0.9 }}
             href="#contact"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            data-aos-delay="1100"
           >
             Contact Us
-          </a>
+          </motion.a>
         </div>
       </div>
+      {/* mobile nav bar */}
       <div className="div lg:hidden ">
         <div className="hamburger  lg:visible">
           <span className="block w-6 h-0.5 bg-white mb-1"></span>
@@ -77,12 +87,22 @@ const NavBar = () => {
       {stickyNav >= window.innerHeight / 2 ? (
         <div className="fixed flex justify-center text-center transform -translate-x-1/2 -translate-y-1/2 bottom-1/2 top-1/6 left-1/2 md:text-2xl lg:visible not-lg:hidden w-full z-20 ">
           <div className=" inline-block mt-4">
-            <ul className="backdrop-blur-3xl flex gap-2 text-sm rounded-full p-2 tracking-wide">
-              <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2">Home</li>
-              <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2">About</li>
-              <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2">Skills</li>
-              <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2">Certificates</li>
-              <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2">Contact Us</li>
+            <ul className="backdrop-blur-3xl flex gap-2 text-sm rounded-full p-2 tracking-wide ">
+              <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2 transition-all duration-500 ease-in-out">
+                Home
+              </li>
+              <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2 transition-all duration-500 ease-in-out">
+                About
+              </li>
+              <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2 transition-all duration-500 ease-in-out">
+                Skills
+              </li>
+              <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2 transition-all duration-500 ease-in-out">
+                Certificates
+              </li>
+              <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2 transition-all duration-500 ease-in-out">
+                Contact Us
+              </li>
             </ul>
           </div>
         </div>

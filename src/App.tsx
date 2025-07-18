@@ -1,3 +1,4 @@
+import { useTheme } from "./context/ThemeProvider";
 import About from "./pages/About";
 import Certificates from "./pages/Certificates";
 import ContactUs from "./pages/ContactUs";
@@ -10,8 +11,10 @@ AOS.init();
 
 
 const App = () => {
+    const {themeValue} = useTheme();
+  
   return (
-    <div className="overflow-hidden " style={{ fontFamily: "Querencia" }}>
+    <div className={`overflow-hidden ${themeValue} space-y-10`} style={{ fontFamily: "monospace" }}>
       <Hero />
       <About />
       <Skills />
