@@ -85,9 +85,9 @@ const NavBar = () => {
 
       {/* glass Nav */}
       {stickyNav >= window.innerHeight / 2 ? (
-        <div className="fixed flex justify-center text-center transform -translate-x-1/2 -translate-y-1/2 bottom-1/2 top-1/6 left-1/2 md:text-2xl lg:visible not-lg:hidden w-full z-20 ">
-          <div className=" inline-block mt-4">
-            <ul className="backdrop-blur-3xl flex gap-2 text-sm rounded-full p-2 tracking-wide ">
+        <div className="fixed inline-block h-8 transform -translate-x-1/2 -translate-y-1/2 bottom-1/2 top-1/12 left-1/2 md:text-2xl lg:visible not-lg:hidden  z-20 ">
+          <div className="mt-4  h-6">
+            <ul className="backdrop-blur-3xl border transform -translate-y-1/2 top-1/5 justify-center text-center w-full flex gap-2 text-sm rounded-full p-2 tracking-wide ">
               <li className="cursor-pointer hover:bg-[#D1D5DC] hover:text-[#1D2428] rounded-3xl p-2 transition-all duration-500 ease-in-out">
                 Home
               </li>

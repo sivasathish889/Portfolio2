@@ -14,7 +14,7 @@ const App = () => {
     const {themeValue} = useTheme();
   
   return (
-    <div className={`overflow-hidden ${themeValue} space-y-10`} style={{ fontFamily: "monospace" }}>
+    <div className={`overflow-hidden ${themeValue} space-y-10 md:space-y-5`} style={{ fontFamily: "monospace" }}>
       <Hero />
       <About />
       <Skills />
