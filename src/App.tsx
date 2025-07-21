@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useTheme } from "./context/ThemeProvider";
 import About from "./pages/About";
 import Certificates from "./pages/Certificates";
@@ -12,11 +13,13 @@ AOS.init();
 
 const App = () => {
     const {themeValue} = useTheme();
-  
+    const dropDownRef = useRef(null);
+    // const heroRef = useRef(null);
+
   return (
     <div className={`overflow-hidden ${themeValue} space-y-10 md:space-y-5`} style={{ fontFamily: "monospace" }}>
-      <Hero />
-      <About />
+      <Hero dropDownRef = {dropDownRef} />
+      <About dropDownRef = {dropDownRef}/>
       <Skills />
       <Projects />
       <Certificates />

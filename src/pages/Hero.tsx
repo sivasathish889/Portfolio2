@@ -3,21 +3,33 @@ import instagramIcon from "../assets/AnimatedIcon/instagram.gif";
 import linkedIcon from "../assets/AnimatedIcon/linkedin.gif";
 import githubIcon from "../assets/AnimatedIcon/github.gif";
 import myImage from "../assets/MyImage.webp";
-const Hero = () => {
+import { ArrowDownToDot } from "lucide-react";
+import { useEffect, useState } from "react";
+
+const Hero = ({ dropDownRef }: any) => {
+  const [stickyNav, setStickyNav] = useState<number>(0);
   const text = "Full Stack Developer".split("");
+  function stickNavbar() {
+    let windowHeight = window.scrollY;
+    setStickyNav(windowHeight);
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", stickNavbar);
+  }, []);
   return (
-    <div className="h-[100vh]  not-lg:p-3">
-      <div className="navbar flex flex-col h-[100vh] justify-between relative ">
+    <>
+      <div className="navbar flex flex-col h-[100vh] justify-between relative not-lg:p-3">
         <NavBar />
         <img
           src={myImage}
           alt="My Image"
-          className="object-contain absolute lg:pt-16 text-center transform -translate-x-1/2 -translate-y-1/2 bottom-1/2 top-1/2 left-1/2 w-[80%] h-[80%] lg:w-[100%] lg:h-[100%] rounded-full z-10"
+          className="object-contain absolute lg:pt-16 text-center transform -translate-x-1/2 -translate-y-7/12 lg:-translate-y-1/2 bottom-1/2 top-1/2 left-1/2 w-[70%] h-[100%] lg:w-[100%] lg:h-[100%] rounded-full z-10"
           height={200}
           width={200}
         />
         <p
-          className="absolute text-center transform -translate-x-1/2 -translate-y-1/2 bottom-1/2 lg:top-1/3 top-1/4 left-1/2 lg:text-[20vh] sm:text-7xl font-extralight text-4xl w-full z-0 "
+          className="absolute text-center transform -translate-x-1/2 -translate-y-2/6 bottom-1/2 lg:top-1/3 top-1/4 left-1/2 lg:text-[20vh] sm:text-7xl font-extralight text-4xl w-full z-0 "
           data-aos="zoom-in-up"
           data-aos-duration="2000"
           data-aos-anchor-placement="center-bottom"
@@ -26,7 +38,7 @@ const Hero = () => {
         </p>
         <div className=" lg:p-3 flex flex-col ">
           <hr className="border w-full mb-14 not-lg:hidden " />
-          <div className="not-md:space-y-10 not-md:mb-10 lg:flex lg:justify-between items-center">
+          <div className="not-md:space-y-10 not-md:mb-20 lg:flex lg:justify-between items-center">
             <div className=" self-end justify-center flex not-sm:text-xs ">
               {text.map((char, i) => (
                 <span
@@ -41,28 +53,46 @@ const Hero = () => {
                 </span>
               ))}
             </div>
-            <div className="left-container self-end flex justify-center not-lg:space-x-5">
-              <img
-                src={githubIcon}
-                alt="github icon"
-                className="h-10 w-10 lg:h-14 lg:w-14"
-              />
-              <img
-                src={linkedIcon}
-                alt="linked icon"
-                className="h-10 w-10 lg:h-14 lg:w-14"
-              />
-              <img
-                src={instagramIcon}
-                alt="instagram icon"
-                className="h-10 w-10 lg:h-14 lg:w-14"
-              />
+            <div className="left-container self-end flex justify-center not-lg:space-x-5 flex-col items-center not-lg:gap-6 gap-2">
+              <div className="flex gap-x-3">
+                <img
+                  src={githubIcon}
+                  alt="github icon"
+                  className="h-12 w-12 lg:h-14 lg:w-14"
+                />
+                <img
+                  src={linkedIcon}
+                  alt="linked icon"
+                  className="h-12 w-12 lg:h-14 lg:w-14"
+                />
+                <img
+                  src={instagramIcon}
+                  alt="instagram icon"
+                  className="h-12 w-12 lg:h-14 lg:w-14"
+                />
+              </div>
+              <div className="only-mobile flex justify-center items-center gap-4">
+                <button className="px-4 py-2 border rounded-md">Hire Me</button>
+                <button className="px-4 py-2 border rounded-md">
+                  Download CV
+                </button>
+              </div>
             </div>
           </div>
         </div>
+        {stickyNav < 150 && (
+          <div
+            className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10 border p-1 rounded-md cursor-pointer"
+            onClick={() =>
+              dropDownRef.current?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            <ArrowDownToDot />
+          </div>
+        )}
       </div>
       <hr />
-    </div>
+    </>
   );
 };
 

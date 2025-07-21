@@ -1,12 +1,12 @@
 import myImage2 from "../assets/myImage2.webp";
-const About = () => {
+const About = ({dropDownRef} :any) => {
   return (
-    <div className="min-h-screen flex flex-col gap-3  m-2 lg:px-4">
+    <div className="min-h-screen flex flex-col gap-3  m-2 lg:px-4" ref={dropDownRef}>
       <p className="header text-center w-full text-5xl " id="about">
         About Me
       </p>
       <div className="h-[90vh] flex justify-around items-center flex-col lg:flex-row m-4  lg:px-1">
-        <div className="left-content w-full lg:w-[50%] h-[50%] lg:h-[60%]  object-contain flex justify-center items-center">
+        <div className="left-content w-full lg:w-[50%] h-[40%] lg:h-[60%]  object-contain flex justify-center items-center">
           <img src={myImage2} className="w-[70%] h-full lg:w-[50%] object-cover rounded-3xl" alt="image2" />
         </div>
         <div className="right-content w-full lg:w-[45%] space-y-3 ">

@@ -1,20 +1,39 @@
-import { skillIcons } from "../assets/assets"
+import { skillIcons } from "../assets/assets";
 
 const FrontEndSkills = () => {
   return (
-    <div className='flex justify-center items-center h-screen'>
-      <div className=" grid grid-cols-12 w-full place-content-evenly">
-        <img src={skillIcons.html} alt="" className="h-32 w-3h-32  border m-2 p-4 col-span-3" />
-        <img src={skillIcons.css} alt="" className="h-32 w-3h-32 border m-2 p-4 col-span-3"/>
-        <img src={skillIcons.bootstrap} alt="" className="h-32 w-3h-32 border m-2 p-4 col-span-3"/>
-        <img src={skillIcons.tailwind} alt="" className="h-32 w-3h-32 border m-2 p-4 col-span-3"/>
-        <img src={skillIcons.js} alt="" className="h-32 w-3h-32 border m-2 p-4 col-span-3"/>
-        <img src={skillIcons.react} alt="" className="h-32 w-3h-32 border m-2 p-4 col-span-3"/>
-        <img src={skillIcons.expo} alt="" className="h-32 w-3h-32 border m-2 p-4 col-span-3"/>
-        <img src={skillIcons.nextjs} alt="" className="h-32 w-3h-32 border m-2 p-4 col-span-3"/>
+    <div className="flex justify-center items-center h-screen not-lg:flex-col not-md:flex-col gap-2 not-lg:mx-2 md:mx-4">
+      <div className="left-content w-full lg:w-[50%] md:w-[50%]  h-fit flex justify-center items-center">
+        <div className=" flex flex-wrap not-lg:gap-2 space-y-4">
+          {Object.entries(skillIcons.frontend).map(([key, value]) => (
+            <div className="flex h-full w-full md:w-[50%] lg:w-[50%] rounded-xl items-center justify-start px-4 md:py-2">
+              <div className="px-4 py-2 w-fit h-fit">
+                <img key={key} src={value.image} alt="" className="h-10 w-10" />
+              </div>
+              <div className="pill w-full space-y-2">
+                <p>{value.name}</p>
+                <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                  <div
+                    className="bg-blue-600 h-2.5 rounded-full"
+                    style={{ width: "45%" }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="right-content  lg:w-[50%] hidden md:block lg:block">
+        <div className="w-full h-full flex justify-center items-center">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+            alt=""
+            className="h-full w-full lg:w-[80%] object-cover rounded-xl"
+          />
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FrontEndSkills
+export default FrontEndSkills;
