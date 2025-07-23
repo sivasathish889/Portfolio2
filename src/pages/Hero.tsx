@@ -19,7 +19,7 @@ const Hero = ({ dropDownRef }: any) => {
   }, []);
   return (
     <>
-      <div className="navbar flex flex-col h-[100vh] justify-between relative not-lg:p-3">
+      <div className="navbar flex flex-col h-screen justify-between relative not-lg:p-3">
         <NavBar />
         <img
           src={myImage}
@@ -27,12 +27,16 @@ const Hero = ({ dropDownRef }: any) => {
           className="object-contain absolute lg:pt-16 text-center transform -translate-x-1/2 -translate-y-7/12 lg:-translate-y-1/2 bottom-1/2 top-1/2 left-1/2 w-[70%] h-[100%] lg:w-[100%] lg:h-[100%] rounded-full z-10"
           height={200}
           width={200}
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          data-aos-delay="1000"
         />
         <p
-          className="absolute text-center transform -translate-x-1/2 -translate-y-2/6 bottom-1/2 lg:top-1/3 top-1/4 left-1/2 lg:text-[20vh] sm:text-7xl font-extralight text-4xl w-full z-0 "
+          className="absolute text-center transform -translate-x-1/2 -translate-y-2/6 bottom-1/2 lg:top-1/3 top-1/4 left-1/2 lg:text-[20vh] sm:text-7xl font-extralight text-4xl w-full z-0 bg-gradient-to-t  via-purple-500 from-transparent text-transparent bg-clip-text "
           data-aos="zoom-in-up"
           data-aos-duration="2000"
           data-aos-anchor-placement="center-bottom"
+          data-aos-delay="100"
         >
           Siva Sathish
         </p>
@@ -58,22 +62,42 @@ const Hero = ({ dropDownRef }: any) => {
                 <img
                   src={githubIcon}
                   alt="github icon"
-                  className="h-12 w-12 lg:h-14 lg:w-14"
+                  className="h-12 w-12 lg:h-14 lg:w-14 cursor-pointer"
+                  data-aos="fade-left"
+                  data-aos-duration="2000"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-delay="1000"
                 />
                 <img
                   src={linkedIcon}
                   alt="linked icon"
-                  className="h-12 w-12 lg:h-14 lg:w-14"
+                  className="h-12 w-12 lg:h-14 lg:w-14 cursor-pointer"
+                  data-aos="fade-left"
+                  data-aos-duration="2000"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-delay="1200"
                 />
                 <img
                   src={instagramIcon}
                   alt="instagram icon"
-                  className="h-12 w-12 lg:h-14 lg:w-14"
+                  className="h-12 w-12 lg:h-14 lg:w-14 cursor-pointer"
+                  data-aos="fade-left"
+                  data-aos-duration="2000"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-delay="1500"
                 />
               </div>
               <div className="only-mobile flex justify-center items-center gap-4">
-                <button className="px-4 py-2 border rounded-md">Hire Me</button>
-                <button className="px-4 py-2 border rounded-md">
+                <button className="px-4 py-2 border-2 rounded-md border-purple-500 hover:bg-purple-500 cursor-pointer hover:text-black" data-aos="fade-left"
+                  data-aos-duration="2000"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-delay="1000">
+                  Hire Me
+                </button>
+                <button className="px-4 py-2 border-2 rounded-md border-purple-500 hover:bg-purple-500 cursor-pointer hover:text-black " data-aos="fade-left"
+                  data-aos-duration="2000"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-delay="1000">
                   Download CV
                 </button>
               </div>
@@ -82,7 +106,7 @@ const Hero = ({ dropDownRef }: any) => {
         </div>
         {stickyNav < 150 && (
           <div
-            className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10 border p-1 rounded-md cursor-pointer"
+            className="absolute bottom-14 md:bottom-3 left-1/2 transform -translate-x-1/2 z-10 border p-1 rounded-md cursor-pointer"
             onClick={() =>
               dropDownRef.current?.scrollIntoView({ behavior: "smooth" })
             }

@@ -13,7 +13,7 @@ const NavBar = () => {
     setMenuOpen(false);
   }
 
-   // Scroll to the top of the page with a smooth animation.
+  // Scroll to the top of the page with a smooth animation.
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
@@ -29,7 +29,7 @@ const NavBar = () => {
       <div
         className="logo text-4xl flex items-center gap-11"
         data-aos="fade-right"
-        data-aos-delay="100"
+        data-aos-delay="1000"
         data-aos-duration="1000"
       >
         <p>Shiva</p>
@@ -40,44 +40,29 @@ const NavBar = () => {
         )}
       </div>
       <div className="left-container flex gap-5 text-sm lg:visible">
-        <div className="nav-links flex flex-col not-lg:hidden ">
-          <motion.a
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.1 }}
-            href="#about"
-            className="hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-transform hover:underline"
-          >
-            About
-          </motion.a>
-          <motion.a
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            href="#skills"
-            className="hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-transform hover:underline"
-          >
-            Skills
-          </motion.a>
-          <motion.a
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            href="#projects"
-            className="hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-transform hover:underline"
-          >
-            Projects
-          </motion.a>
-          <motion.a
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            className="hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-transform hover:underline"
-            transition={{ duration: 1, delay: 0.7 }}
-            href="#certificates"
-          >
-            Cerificates
-          </motion.a>
-          <motion.a
+        <div className="nav-links  not-lg:hidden ">
+          <ul className="flex flex-col">
+            {Object.entries([
+              "About",
+              "Skills",
+              "Projects",
+              "Certificates",
+              "Contact",
+            ]).map(([key, value],index) => (
+              <a
+                key={key}
+                data-aos="fade-left"
+                data-aos-duration={index * 500 + 1000}
+                data-aos-delay="1000"
+                data-aos-anchor-placement="center-bottom"
+                className="hover:transform hover:-translate-x-1 hover:text-purple-500 hover:-translate-y-1 transition-transform hover:underline cursor-pointer"
+              >
+                {value}
+              </a>
+            ))}
+          </ul>
+
+          {/*<motion.a
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             className="hover:transform hover:-translate-x-1 hover:-translate-y-1 transition-transform hover:underline"
@@ -85,7 +70,7 @@ const NavBar = () => {
             href="#contact"
           >
             Contact Us
-          </motion.a>
+          </motion.a> */}
         </div>
       </div>
       {/* mobile nav bar */}
@@ -133,7 +118,10 @@ const NavBar = () => {
 
       {/* last nav */}
       {stickyNav > window.innerHeight / 2 && (
-        <div className="fixed bottom-10 right-10 border backdrop-blur-2xl cursor-pointer" onClick={scrollTop}>
+        <div
+          className="fixed bottom-10 right-10 border backdrop-blur-2xl cursor-pointer"
+          onClick={scrollTop}
+        >
           <ArrowBigUpDash />
         </div>
       )}

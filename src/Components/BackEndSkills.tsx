@@ -13,11 +13,17 @@ const BackEndSkills = () => {
         </div>
       </div>
       <div className="right-content  lg:w-[50%] ">
-        <div className=" flex flex-wrap not-lg:gap-2 space-y-4">
-          {Object.entries(skillIcons.backend).map(([key, value]) => (
-            <div className="flex h-full w-full md:w-[50%] lg:w-[50%] rounded-xl items-center justify-start px-4 md:py-2">
+        <div className=" flex flex-wrap not-lg:gap-2 space-y-4 not-lg:justify-center">
+          {Object.entries(skillIcons.backend).map(([key, value], index) => (
+            <div
+              className="flex h-full w-full md:w-[50%] lg:w-[50%] rounded-xl items-center justify-start px-4 md:py-2"
+              data-aos="fade-left"
+              data-aos-duration={1000}
+              data-aos-delay={index * 100}
+              data-aos-anchor-placement="center-bottom"
+            >
               <div className="px-4 py-2 w-fit h-fit">
-                <img key={key} src={value.image} alt="" className="h-10 w-10" />
+                <img key={key} src={value.image} alt="" className="h-10 w-12" />
               </div>
               <div className="pill w-full space-y-2">
                 <p>{value.name}</p>

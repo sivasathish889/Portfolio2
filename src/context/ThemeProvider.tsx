@@ -30,7 +30,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
     };
 
-    const themeValue = theme === 'light' ? 'text-black bg-gray-400' : 'text-gray-400 bg-[#1D2428]';
+    const themeValue = theme === 'light' ? 'text-black bg-gray-200' : 'text-gray-400 bg-[#1D2428]';
 
     return (
         <ThemeContext.Provider value={{ toggleTheme, theme, themeValue }}>

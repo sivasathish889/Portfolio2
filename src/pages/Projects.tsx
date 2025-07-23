@@ -1,7 +1,11 @@
 
 const Projects = () => {
   return (
-    <div className=" bg-emerald-600">Projects</div>
+    <div className="h-screen bg-emerald-600">
+      <p className="header text-center w-full text-5xl " id="about">
+        Skills
+      </p>
+    </div>
   )
 }
 
