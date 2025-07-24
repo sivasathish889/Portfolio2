@@ -1,7 +1,7 @@
 import { useState } from "react";
-import FrontEndSkills from "../Components/FrontEndSkills";
-import BackEndSkills from "../Components/BackEndSkills";
-import ToolSkills from "../Components/ToolSkills";
+import FrontEndSkills from "../components/FrontEndSkills";
+import BackEndSkills from "../components/BackEndSkills";
+import ToolSkills from "../components/ToolSkills";
 import { useTheme } from "../context/ThemeProvider";
 // import { skillIcons } from "../assets/assets";
 

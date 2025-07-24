@@ -15,6 +15,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "aos": "^3.0.0-beta.6",
     "framer-motion": "^12.23.3",
+    "lightswind": "^3.1.12",
     "lucide-react": "^0.525.0",
     "postcss": "^8.5.6",
     "react": "^19.1.0",

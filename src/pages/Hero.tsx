@@ -1,4 +1,4 @@
-import NavBar from "../Components/NavBar";
+import NavBar from "../components/NavBar";
 import instagramIcon from "../assets/AnimatedIcon/instagram.gif";
 import linkedIcon from "../assets/AnimatedIcon/linkedin.gif";
 import githubIcon from "../assets/AnimatedIcon/github.gif";
