@@ -40,10 +40,10 @@ const Certificates = () => {
           : {}
       }
     >
-      <div className="header  text-center max-w-full relative mt-10" id="about">
-        <p className="text-4xl md:text-7xl text-purple-500">Certificates</p>
+      <div className="header  text-center max-w-screen relative mt-10" id="about">
+        <p className="text-3xl md:text-7xl text-purple-500">Certificates</p>
         <p
-          className={`font-bold tracking-widest  text-5xl md:text-9xl text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  ${
+          className={`font-bold tracking-widest  text-4xl md:text-9xl text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  ${
             theme !== "light" ? "font-dark-outline-2" : "font-light-outline-2"
           }`}
         >

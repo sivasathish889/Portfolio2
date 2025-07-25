@@ -222,7 +222,7 @@ export const ScrollTimeline = ({
       ref={scrollRef}
       className={cn(
         "relative min-h-screen w-full pt-10 overflow-hidden",
-        darkMode ? "bg-background text-foreground" : "",
+        darkMode ? "bg-background text-foreground" : "  ",
         className
       )}
     >
@@ -304,7 +304,7 @@ export const ScrollTimeline = ({
                     timelineRefs.current[index] = el;
                   }}
                   className={cn(
-                    "relative flex items-center mb-20 py-4",
+                    "relative flex items-center mb-20 py-4 ",
                     "flex-col lg:flex-row",
                     cardAlignment === "alternating"
                       ? index % 2 === 0
@@ -359,7 +359,7 @@ export const ScrollTimeline = ({
                     viewport={{ once: false, margin: "-100px" }}
                     style={parallaxIntensity > 0 ? { y: yOffset } : undefined}
                   >
-                    <Card className={`bg-background  hover:shadow-md hover:-translate-y-1 hover:-translate-x-1 border-2 border-purple-500 backdrop-blur-3xl  hover:shadow-purple-500 ${theme=="light"? " hover:shadow-2xl hover:shadow-violet-500 " :"text-black"}`}>
+                    <Card className={`bg-background  hover:shadow-md hover:-translate-y-1 hover:-translate-x-1 border-2 border-purple-500 backdrop-blur-3xl bg-transparent  hover:shadow-purple-500 ${theme=="light"? " hover:shadow-2xl text-black hover:shadow-violet-500 " :"text-white"}`}>
                       <CardContent className="p-6">
                         {dateFormat === "badge" ? (
                           <div className="flex items-center mb-2">

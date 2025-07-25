@@ -19,14 +19,14 @@ const About = ({ dropDownRef }: any) => {
           : {}
       }
     >
-      <div className="header text-center w-full relative mt-10" id="about">
-        <p className="text-5xl text-purple-500"> About Me</p>
+      <div className="header text-center w-full max-w-screen relative mt-10" id="about">
+        <p className="text-5xl md:text-7xl text-purple-500">About</p>
         <p
-          className={`font-bold tracking-widest text-9xl text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  ${
+          className={`font-bold tracking-widest text-6xl md:text-8xl w-full  text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${
             theme !== "light" ? "font-dark-outline-2" : "font-light-outline-2"
           }`}
         >
-          ABOUT
+          ABOUT US
         </p>
       </div>
       <div className="h-[90vh] flex justify-around items-center flex-col lg:flex-row m-4  lg:px-1 ">
