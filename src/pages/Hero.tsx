@@ -2,12 +2,14 @@ import NavBar from "../components/NavBar";
 import instagramIcon from "../assets/AnimatedIcon/instagram.gif";
 import linkedIcon from "../assets/AnimatedIcon/linkedin.gif";
 import githubIcon from "../assets/AnimatedIcon/github.gif";
-import myImage from "../assets/MyImage.webp";
+import myImage from "../assets/images/MyImage.webp";
 import { ArrowDownToDot } from "lucide-react";
 import { useEffect, useState } from "react";
-
+import background from "../assets/images/backgorund.jpg";
+import { useTheme } from "../context/ThemeProvider";
 const Hero = ({ dropDownRef }: any) => {
   const [stickyNav, setStickyNav] = useState<number>(0);
+  const { theme } = useTheme();
   const text = "Full Stack Developer".split("");
   function stickNavbar() {
     let windowHeight = window.scrollY;
@@ -19,7 +21,21 @@ const Hero = ({ dropDownRef }: any) => {
   }, []);
   return (
     <>
-      <div className="navbar flex flex-col h-screen justify-between relative not-lg:p-3">
+      <div
+        className="navbar flex flex-col h-screen justify-between relative not-lg:p-3"
+        style={
+          theme == "light"
+            ? {
+                backgroundImage: `url(${background})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed",
+                
+              }
+            : {}
+        }
+      >
         <NavBar />
         <img
           src={myImage}
@@ -88,16 +104,22 @@ const Hero = ({ dropDownRef }: any) => {
                 />
               </div>
               <div className="only-mobile flex justify-center items-center gap-4">
-                <button className="px-4 py-2 border-2 rounded-md border-purple-500 hover:bg-purple-500 cursor-pointer hover:text-black" data-aos="fade-left"
+                <button
+                  className="px-4 py-2 border-2 rounded-md border-purple-500 hover:bg-purple-500 cursor-pointer hover:text-black"
+                  data-aos="fade-left"
                   data-aos-duration="2000"
                   data-aos-anchor-placement="center-bottom"
-                  data-aos-delay="1000">
+                  data-aos-delay="1000"
+                >
                   Hire Me
                 </button>
-                <button className="px-4 py-2 border-2 rounded-md border-purple-500 hover:bg-purple-500 cursor-pointer hover:text-black " data-aos="fade-left"
+                <button
+                  className="px-4 py-2 border-2 rounded-md border-purple-500 hover:bg-purple-500 cursor-pointer hover:text-black "
+                  data-aos="fade-left"
                   data-aos-duration="2000"
                   data-aos-anchor-placement="center-bottom"
-                  data-aos-delay="1000">
+                  data-aos-delay="1000"
+                >
                   Download CV
                 </button>
               </div>
@@ -115,7 +137,7 @@ const Hero = ({ dropDownRef }: any) => {
           </div>
         )}
       </div>
-      <hr />
+      {/* <hr /> */}
     </>
   );
 };

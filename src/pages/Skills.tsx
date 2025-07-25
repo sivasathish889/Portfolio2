@@ -3,15 +3,30 @@ import FrontEndSkills from "../components/FrontEndSkills";
 import BackEndSkills from "../components/BackEndSkills";
 import ToolSkills from "../components/ToolSkills";
 import { useTheme } from "../context/ThemeProvider";
+import background from "../assets/images/backgorund.jpg";
+
 // import { skillIcons } from "../assets/assets";
 
 type NavItems = "frontend" | "backend" | "tools";
 const Skills = () => {
   const [currentNav, setCurrentNav] = useState<NavItems>("frontend");
-  const {theme} = useTheme();
+  const { theme } = useTheme();
 
   return (
-    <div className="h-[100vh] flex flex-col gap-3 px-2 lg:px-4">
+    <div
+      className="h-[100vh] flex flex-col gap-3 px-2 lg:px-4 backdrop-blur-3xl"
+      style={
+        theme == "light"
+          ? {
+              backgroundImage: `url(${background})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundAttachment: "fixed",
+              backgroundBlendMode: "overlay",
+            }
+          : {}
+      }
+    >
       <div className="header text-center max-w-full relative mt-10" id="about">
         <p className="text-6xl text-purple-500">Skills</p>
         <p
@@ -57,7 +72,11 @@ const Skills = () => {
         <ul className="flex  justify-center items-center  gap-5 backdrop-blur-2xl border-2 border-purple-500 rounded-full m-3 transition-all duration-500 ease-in-out">
           <li
             className={`cursor-pointer px-4 py-2 rounded-full   ${
-              currentNav == "frontend" ? theme == "light" ? "bg-purple-500  text-black border-2 border-purple-500" : "bg-purple-600 text-white border-2 border-purple-500" : ""
+              currentNav == "frontend"
+                ? theme == "light"
+                  ? "bg-purple-500  text-black border-2 border-purple-500"
+                  : "bg-purple-600 text-white border-2 border-purple-500"
+                : ""
             }`}
             onClick={() => setCurrentNav("frontend")}
           >
@@ -65,7 +84,11 @@ const Skills = () => {
           </li>
           <li
             className={`cursor-pointer px-4 py-2 rounded-full ${
-              currentNav == "backend" ? theme == "light" ? "bg-purple-500 text-black border-2 border-purple-500" : "bg-purple-600 text-white border-2 border-purple-500" : ""
+              currentNav == "backend"
+                ? theme == "light"
+                  ? "bg-purple-500 text-black border-2 border-purple-500"
+                  : "bg-purple-600 text-white border-2 border-purple-500"
+                : ""
             }`}
             onClick={() => setCurrentNav("backend")}
           >
@@ -73,7 +96,11 @@ const Skills = () => {
           </li>
           <li
             className={`cursor-pointer px-4 py-2 rounded-full ${
-              currentNav == "tools" ? theme == "light" ? "bg-purple-500 text-black border-2 border-purple-500" : "bg-purple-600 text-white border-2 border-purple-500" : ""
+              currentNav == "tools"
+                ? theme == "light"
+                  ? "bg-purple-500 text-black border-2 border-purple-500"
+                  : "bg-purple-600 text-white border-2 border-purple-500"
+                : ""
             }`}
             onClick={() => setCurrentNav("tools")}
           >

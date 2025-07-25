@@ -359,7 +359,7 @@ export const ScrollTimeline = ({
                     viewport={{ once: false, margin: "-100px" }}
                     style={parallaxIntensity > 0 ? { y: yOffset } : undefined}
                   >
-                    <Card className={`bg-background  hover:shadow-md hover:-translate-y-1 hover:-translate-x-1  hover:shadow-violet-500 ${theme=="light"? "bg-violet-500 hover:shadow-2xl hover:shadow-violet-500" :""}`}>
+                    <Card className={`bg-background  hover:shadow-md hover:-translate-y-1 hover:-translate-x-1 border-2 border-purple-500 backdrop-blur-3xl  hover:shadow-purple-500 ${theme=="light"? " hover:shadow-2xl hover:shadow-violet-500 " :"text-black"}`}>
                       <CardContent className="p-6">
                         {dateFormat === "badge" ? (
                           <div className="flex items-center mb-2">

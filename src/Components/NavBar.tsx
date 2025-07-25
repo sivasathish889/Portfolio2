@@ -27,16 +27,16 @@ const NavBar = () => {
   return (
     <div className={`m-3 flex justify-between items-center`}>
       <div
-        className="logo text-4xl flex items-center gap-11"
+        className=" text-4xl flex items-center gap-11"
         data-aos="fade-right"
         data-aos-delay="1000"
         data-aos-duration="1000"
       >
         <p>Shiva</p>
         {theme === "light" ? (
-          <Sun onClick={toggleTheme} className="cursor-pointer" />
+          <Sun onClick={toggleTheme} className="cursor-pointer z-50" />
         ) : (
-          <Moon onClick={toggleTheme} className="cursor-pointer" />
+          <Moon onClick={toggleTheme} className="cursor-pointer z-50" />
         )}
       </div>
       <div className="left-container flex gap-5 text-sm lg:visible">

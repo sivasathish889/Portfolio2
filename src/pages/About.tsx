@@ -1,24 +1,39 @@
-import myImage2 from "../assets/myImage2.webp";
+import myImage2 from "../assets/images/myImage2.webp";
 import { useTheme } from "../context/ThemeProvider";
+import background from "../assets/images/backgorund.jpg";
+
 const About = ({ dropDownRef }: any) => {
   const { theme } = useTheme();
   return (
     <div
-      className="min-h-screen flex flex-col gap-3  m-2 lg:px-4"
+      className="h-screen flex flex-col gap-3  m-2 lg:px-4 backdrop-blur-3xl"
       ref={dropDownRef}
+      style={
+        theme == "light"
+          ? {
+              backgroundImage: `url(${background})`,
+              backgroundSize: "cover",
+              backgroundAttachment: "fixed",
+              backgroundBlendMode: "overlay",
+            }
+          : {}
+      }
     >
-      <div
-        className="header text-center w-full relative mt-10"
-        id="about"
-      >
+      <div className="header text-center w-full relative mt-10" id="about">
         <p className="text-5xl text-purple-500"> About Me</p>
-        <p className={`font-bold tracking-widest text-9xl text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  ${theme !=='light' ? "font-dark-outline-2" : "font-light-outline-2"}`}>ABOUT</p>
+        <p
+          className={`font-bold tracking-widest text-9xl text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  ${
+            theme !== "light" ? "font-dark-outline-2" : "font-light-outline-2"
+          }`}
+        >
+          ABOUT
+        </p>
       </div>
-      <div className="h-[90vh] flex justify-around items-center flex-col lg:flex-row m-4  lg:px-1">
+      <div className="h-[90vh] flex justify-around items-center flex-col lg:flex-row m-4  lg:px-1 ">
         <div className="left-content w-full lg:w-[50%] h-[40%] lg:h-[60%]  object-contain flex justify-center items-center">
           <img
             src={myImage2}
-            className="w-[70%] h-full lg:w-[50%] object-cover rounded-3xl"
+            className="w-[70%] h-full lg:w-[50%] object-cover rounded-3xl no-scrollbar"
             alt="image2"
             data-aos="fade-right"
             data-aos-duration="2000"
@@ -71,7 +86,7 @@ const About = ({ dropDownRef }: any) => {
           </div>
         </div>
       </div>
-      <hr />
+      {/* <hr /> */}
     </div>
   );
 };

@@ -17,14 +17,14 @@ const App = () => {
     // const heroRef = useRef(null);
 
   return (
-    <div className={`overflow-hidden ${themeValue} space-y-10 md:space-y-5`} style={{ fontFamily: "monospace" }}>
+    <section className={` ${themeValue} space-y-10 md:space-y-0`} style={{ fontFamily: "monospace" }}>
       <Hero dropDownRef = {dropDownRef} />
       <About dropDownRef = {dropDownRef}/>
       <Skills />
       <Projects />
       <Certificates />
       <ContactUs />
-    </div>
+    </section>
   );
 };
 

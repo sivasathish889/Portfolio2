@@ -28,6 +28,19 @@ import webstorm from "./icons/skills/webstorm.png";
 import figma from "./icons/skills/figma.png";
 import postman from "./icons/skills/postman.png";
 
+import chat_app_thumb from "./images/chat_app_thumb.png"
+import outpass from "./images/outpass.jpg"
+import thirukural from "./images/Thirukural Book.png"
+import ecommerce from "./images/e-commerce.png"
+import glassNav from "./images/glass navbar.png"
+type projectImage ={
+  title : string,
+  image : string,
+  description : string,
+  technologies : string[],
+  liveLink : string,
+  githubLink : string
+}
 export const skillIcons = {
   frontend: {
     html: {
@@ -140,3 +153,46 @@ export const skillIcons = {
     }
   },
 };
+
+export const projectImage : projectImage[] = [
+  {
+    title : "Outpass",
+    image : outpass,
+    description : "A digital system for managing hostel outpass requests, allowing students to apply and administrators to review and approve them efficiently.",
+    technologies : ["Expo", "Express.js", "Tailwind", "MongoDB",],
+    liveLink : "https://outpass.vercel.app/",
+    githubLink : "https://github.com/sumit-kr/outpass"
+  },
+  {
+    title : "Chat App",
+    image : chat_app_thumb,
+    description : "A real-time chat application that enables users to send and receive messages instantly, supporting seamless one-on-one and group conversations.",
+    technologies : ["Next.js", "Express.js", "Socket.IO", "MongoDB", "TypeScript"],
+    liveLink : "https://chat-app-ten.vercel.app/",
+    githubLink : "https://github.com/sumit-kr/chat-app"
+  },
+  {
+    title : "E-Commerce",
+    image : ecommerce,
+    description : "An e-commerce website that provides a platform for buying and selling products online, offering a user-friendly interface and secure payment options.",
+    technologies : ["React.js", "Tailwind", "API", ],
+    liveLink : "https://e-commerce-ten.vercel.app/",
+    githubLink : "https://github.com/sumit-kr/e-commerce"
+  },
+  {
+    title : "Thirukural Book",
+    image : thirukural,
+    description : "A digital book of Thirukkural, a sacred Sanskrit text known for its profound meaning and spiritual significance.",
+    technologies : ["React.js", "Tailwind", "API", ],
+    liveLink : "https://thirukural-book.vercel.app/",
+    githubLink : "https://github.com/sumit-kr/thirukural-book"
+  },
+  {
+    title : "Glassmorphism nav Bar",
+    image : glassNav,
+    description : "A simple and user-friendly calculator that performs basic arithmetic operations, making it a convenient tool for quick calculations.",
+    technologies : ["React.js", "Tailwind", "API", ],
+    liveLink : "https://calculator-ten.vercel.app/",
+    githubLink : "https://github.com/sumit-kr/calculator"
+  }
+]
