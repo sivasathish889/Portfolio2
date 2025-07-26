@@ -48,8 +48,7 @@ const NavBar = ({ navBarRef }: any) => {
     window.addEventListener("scroll", stickNavbar);
   }, []);
 
-  console.log("height",window.innerHeight/2)
-  console.log("sticky",stickyNav)
+
   return (
     <div className={`m-3 flex justify-between items-center`}>
       <div
