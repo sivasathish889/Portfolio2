@@ -1,25 +1,15 @@
 import myImage2 from "../assets/images/myImage2.webp";
 import { useTheme } from "../context/ThemeProvider";
-import background from "../assets/images/backgorund.jpg";
 
-const About = ({ dropDownRef }: any) => {
+const About = ({ dropDownRef,aboutRef }: any) => {
   const { theme } = useTheme();
   return (
     <div
-      className="h-screen flex flex-col gap-3  m-2 lg:px-4 backdrop-blur-3xl"
-      ref={dropDownRef}
-      style={
-        theme == "light"
-          ? {
-              backgroundImage: `url(${background})`,
-              backgroundSize: "cover",
-              backgroundAttachment: "fixed",
-              backgroundBlendMode: "overlay",
-            }
-          : {}
-      }
+      className="h-screen flex flex-col gap-3  m-2 lg:px-4 backdrop-blur-xl"
+      ref={aboutRef}
+     
     >
-      <div className="header text-center w-full max-w-screen relative mt-10" id="about">
+      <div className="header text-center w-full max-w-screen relative mt-10" ref={dropDownRef}>
         <p className="text-5xl md:text-7xl text-purple-500">About</p>
         <p
           className={`font-bold tracking-widest text-6xl md:text-8xl w-full  text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${

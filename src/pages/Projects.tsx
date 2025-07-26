@@ -2,11 +2,10 @@
 
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
-import background from "../assets/images/backgorund.jpg";
 import { useTheme } from "../context/ThemeProvider";
 import { projectImage } from "../assets/assets";
 
-const Projects = () => {
+const Projects = ({ projectsRef }: any) => {
   const { theme } = useTheme();
   const targetRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -16,22 +15,13 @@ const Projects = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", `-81%`]);
   return (
     <section
-     ref={targetRef}
-      className="relative flex flex-col gap-3   backdrop-blur-3xl"
-      style={
-        theme == "light"
-          ? {
-              backgroundImage: `url(${background})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundAttachment: "fixed",
-              backgroundBlendMode: "overlay",
-            }
-          : {}
-      }
+      ref={targetRef}
+      className="relative flex flex-col gap-3 backdrop-blur-xl"
     >
-      <div className="header text-center w-full max-w-screen relative mt-10" id="about">
+      <div
+        className="header text-center w-full max-w-screen relative mt-10"
+        ref={projectsRef}
+      >
         <p className="text-5xl md:text-7xl text-purple-500">Projects</p>
         <p
           className={`font-bold tracking-widest text-6xl md:text-9xl text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${
@@ -57,7 +47,7 @@ const Projects = () => {
                       className="w-[100%]  h-[100%]  hover:scale-110  transition duration-300 ease-in-out "
                     />
                   </div>
-                  
+
                   <div className="content space-y-2 m-2 w-full h-full text-white">
                     <h3 className="text-2xl lg:text-xl">{card.title}</h3>
                     <h2 className="text-xs">{card.description}</h2>

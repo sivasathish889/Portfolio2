@@ -1,7 +1,6 @@
 import { ScrollTimeline } from "../components/lightswind/scroll-timeline";
 import { useTheme } from "../context/ThemeProvider";
-import background from "../assets/images/backgorund.jpg";
-const Certificates = () => {
+const Certificates = ({certificatesRef}:any) => {
   const { theme } = useTheme();
   const DEFAULT_EVENTS = [
     {
@@ -28,17 +27,8 @@ const Certificates = () => {
   ];
   return (
     <div
-      className="h-full flex flex-col gap-3  m-2 lg:px-4 backdrop-blur-3xl"
-      style={
-        theme == "light"
-          ? {
-              backgroundImage: `url(${background})`,
-              backgroundSize: "cover",
-              backgroundAttachment: "fixed",
-              backgroundBlendMode: "overlay",
-            }
-          : {}
-      }
+      className="h-full flex flex-col gap-3  m-2 lg:px-4 backdrop-blur-xl"
+     ref={certificatesRef}
     >
       <div className="header  text-center max-w-screen relative mt-10" id="about">
         <p className="text-3xl md:text-7xl text-purple-500">Certificates</p>

@@ -3,29 +3,18 @@ import FrontEndSkills from "../components/FrontEndSkills";
 import BackEndSkills from "../components/BackEndSkills";
 import ToolSkills from "../components/ToolSkills";
 import { useTheme } from "../context/ThemeProvider";
-import background from "../assets/images/backgorund.jpg";
 
 // import { skillIcons } from "../assets/assets";
 
 type NavItems = "frontend" | "backend" | "tools";
-const Skills = () => {
+const Skills = ({skillsRef} : any) => {
   const [currentNav, setCurrentNav] = useState<NavItems>("frontend");
   const { theme } = useTheme();
 
   return (
     <div
-      className="h-[100vh] flex flex-col gap-3 px-2 lg:px-4 backdrop-blur-3xl"
-      style={
-        theme == "light"
-          ? {
-              backgroundImage: `url(${background})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundAttachment: "fixed",
-              backgroundBlendMode: "overlay",
-            }
-          : {}
-      }
+      className="h-[100vh] flex flex-col gap-3 px-2 lg:px-4  backdrop-blur-xl"
+      ref={skillsRef}
     >
       <div className="header text-center max-w-screen relative mt-10" id="about">
         <p className="text-6xl text-purple-500">Skills</p>

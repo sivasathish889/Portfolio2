@@ -5,11 +5,9 @@ import githubIcon from "../assets/AnimatedIcon/github.gif";
 import myImage from "../assets/images/MyImage.webp";
 import { ArrowDownToDot } from "lucide-react";
 import { useEffect, useState } from "react";
-import background from "../assets/images/backgorund.jpg";
-import { useTheme } from "../context/ThemeProvider";
-const Hero = ({ dropDownRef }: any) => {
+
+const Hero = ({ dropDownRef,navBarRef }: any) => {
   const [stickyNav, setStickyNav] = useState<number>(0);
-  const { theme } = useTheme();
   const text = "Full Stack Developer".split("");
   function stickNavbar() {
     let windowHeight = window.scrollY;
@@ -22,21 +20,10 @@ const Hero = ({ dropDownRef }: any) => {
   return (
     <>
       <div
-        className="navbar flex flex-col h-screen justify-between relative not-lg:p-3"
-        style={
-          theme == "light"
-            ? {
-                backgroundImage: `url(${background})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundAttachment: "fixed",
-                
-              }
-            : {}
-        }
+        className="navbar flex flex-col h-screen justify-between relative not-lg:p-3  backdrop-blur-xl overflow-hidden"
+        ref={navBarRef[0]}
       >
-        <NavBar />
+        <NavBar navBarRef={navBarRef} />
         <img
           src={myImage}
           alt="My Image"
@@ -136,6 +123,8 @@ const Hero = ({ dropDownRef }: any) => {
             <ArrowDownToDot />
           </div>
         )}
+
+        
       </div>
       {/* <hr /> */}
     </>
