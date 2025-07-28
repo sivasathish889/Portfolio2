@@ -19,6 +19,7 @@ export interface TimelineEvent {
   description: string;
   icon?: React.ReactNode;
   color?: string;
+  link? : string
 }
 
 export interface ScrollTimelineProps {
@@ -390,9 +391,10 @@ export const ScrollTimeline = ({
                             {event.subtitle}
                           </p>
                         )}
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground mb-2">
                           {event.description}
                         </p>
+                      <a href={event.link} target="_blank" className="bg-purple-500 px-2 mt-2 rounded-md py-1 cursor-pointer">View</a>
                       </CardContent>
                     </Card>
                   </motion.div>

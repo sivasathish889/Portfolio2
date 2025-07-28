@@ -1,6 +1,6 @@
 import { ScrollTimeline } from "../components/lightswind/scroll-timeline";
 import { useTheme } from "../context/ThemeProvider";
-const Certificates = ({certificatesRef}:any) => {
+const Certificates = ({ certificatesRef }: any) => {
   const { theme } = useTheme();
   const DEFAULT_EVENTS = [
     {
@@ -18,7 +18,7 @@ const Certificates = ({certificatesRef}:any) => {
         "Gained practical experience in full stack development during the internship period.",
     },
     {
-      year: "Jun 25 - Dec 25",
+      year: "Jun 25 - Current",
       title: "InternShip 2",
       subtitle: "GenSet AI",
       description:
@@ -28,9 +28,12 @@ const Certificates = ({certificatesRef}:any) => {
   return (
     <div
       className="h-full flex flex-col gap-3  m-2 lg:px-4 backdrop-blur-xl"
-     ref={certificatesRef}
+      ref={certificatesRef}
     >
-      <div className="header  text-center max-w-screen relative mt-10" id="about">
+      <div
+        className="header  text-center max-w-screen relative mt-10"
+        id="about"
+      >
         <p className="text-3xl md:text-7xl text-purple-500">Certificates</p>
         <p
           className={`font-bold tracking-widest  text-4xl md:text-9xl text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  ${
@@ -41,7 +44,6 @@ const Certificates = ({certificatesRef}:any) => {
         </p>
       </div>
       <ScrollTimeline events={DEFAULT_EVENTS} />
-      <hr />
     </div>
   );
 };

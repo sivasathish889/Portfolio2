@@ -6,7 +6,7 @@ const BackEndSkills = () => {
       <div className="left-content w-full lg:w-[50%] md:w-[50%]  h-fit hidden md:block lg:block">
         <div className="w-full h-full flex justify-center items-center">
           <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+            src="https://plus.unsplash.com/premium_photo-1663040543387-cb7c78c4f012?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
             className="h-full w-full lg:w-[80%] object-cover rounded-xl"
           />
@@ -29,8 +29,11 @@ const BackEndSkills = () => {
                 <p>{value.name}</p>
                 <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                   <div
-                    className="bg-blue-600 h-2.5 rounded-full"
-                    style={{ width: "45%" }}
+                    className=" h-2.5 rounded-full"
+                    style={{
+                      width: value.knowledge,
+                      backgroundColor: value.color,
+                    }}
                   ></div>
                 </div>
               </div>

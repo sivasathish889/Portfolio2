@@ -5,8 +5,8 @@ import githubIcon from "../assets/AnimatedIcon/github.gif";
 import myImage from "../assets/images/MyImage.webp";
 import { ArrowDownToDot } from "lucide-react";
 import { useEffect, useState } from "react";
-
-const Hero = ({ dropDownRef,navBarRef }: any) => {
+import resume from "../assets/Siva_Sathish_Resume.pdf";
+const Hero = ({ dropDownRef, navBarRef }: any) => {
   const [stickyNav, setStickyNav] = useState<number>(0);
   const text = "Full Stack Developer".split("");
   function stickNavbar() {
@@ -62,33 +62,51 @@ const Hero = ({ dropDownRef,navBarRef }: any) => {
             </div>
             <div className="left-container self-end flex justify-center not-lg:space-x-5 flex-col items-center not-lg:gap-6 gap-2">
               <div className="flex gap-x-3">
-                <img
-                  src={githubIcon}
-                  alt="github icon"
-                  className="h-12 w-12 lg:h-14 lg:w-14 cursor-pointer"
-                  data-aos="fade-left"
-                  data-aos-duration="2000"
-                  data-aos-anchor-placement="center-bottom"
-                  data-aos-delay="1000"
-                />
-                <img
-                  src={linkedIcon}
-                  alt="linked icon"
-                  className="h-12 w-12 lg:h-14 lg:w-14 cursor-pointer"
-                  data-aos="fade-left"
-                  data-aos-duration="2000"
-                  data-aos-anchor-placement="center-bottom"
-                  data-aos-delay="1200"
-                />
-                <img
-                  src={instagramIcon}
-                  alt="instagram icon"
-                  className="h-12 w-12 lg:h-14 lg:w-14 cursor-pointer"
-                  data-aos="fade-left"
-                  data-aos-duration="2000"
-                  data-aos-anchor-placement="center-bottom"
-                  data-aos-delay="1500"
-                />
+                <a
+                  href="https://github.com/sivasathish889"
+                  target="_blank"
+                  className="cusor-pointer z-10"
+                >
+                  <img
+                    src={githubIcon}
+                    alt="github icon"
+                    className="h-12 w-12 lg:h-14 lg:w-14 cursor-pointer"
+                    data-aos="fade-left"
+                    data-aos-duration="2000"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-delay="1000"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/siva-sathish-120634301/"
+                  className="cursor-pointer z-10"
+                  target="_blank"
+                >
+                  <img
+                    src={linkedIcon}
+                    alt="linked icon"
+                    className="h-12 w-12 lg:h-14 lg:w-14 c"
+                    data-aos="fade-left"
+                    data-aos-duration="2000"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-delay="1200"
+                  />
+                </a>
+                <a
+                  href="https://www.instagram.com/black_baby_zera/"
+                  className="cursor-pointer z-10"
+                  target="_blank"
+                >
+                  <img
+                    src={instagramIcon}
+                    alt="instagram icon"
+                    className="h-12 w-12 lg:h-14 lg:w-14 "
+                    data-aos="fade-left"
+                    data-aos-duration="2000"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-delay="1500"
+                  />
+                </a>
               </div>
               <div className="only-mobile flex justify-center items-center gap-4">
                 <button
@@ -97,6 +115,9 @@ const Hero = ({ dropDownRef,navBarRef }: any) => {
                   data-aos-duration="2000"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-delay="1000"
+                  onClick={() =>
+                    navBarRef[5].current?.scrollIntoView({ behavior: "smooth" })
+                  }
                 >
                   Hire Me
                 </button>
@@ -107,12 +128,15 @@ const Hero = ({ dropDownRef,navBarRef }: any) => {
                   data-aos-anchor-placement="center-bottom"
                   data-aos-delay="1000"
                 >
-                  Download CV
+                  <a href={resume} download={true}>
+                    Download CV
+                  </a>
                 </button>
               </div>
             </div>
           </div>
         </div>
+
         {stickyNav < 150 && (
           <div
             className="absolute bottom-14 md:bottom-3 left-1/2 transform -translate-x-1/2 z-10 border p-1 rounded-md cursor-pointer"
@@ -124,9 +148,8 @@ const Hero = ({ dropDownRef,navBarRef }: any) => {
           </div>
         )}
 
-        
+        {/* last nav */}
       </div>
-      {/* <hr /> */}
     </>
   );
 };

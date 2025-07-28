@@ -12,7 +12,7 @@ const Projects = ({ projectsRef }: any) => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-81%`]);
+  const x = useTransform(scrollYProgress, [0, 1], ["10%", `-81%`]);
   return (
     <section
       ref={targetRef}
@@ -44,7 +44,7 @@ const Projects = ({ projectsRef }: any) => {
                     <img
                       src={`${card.image}`}
                       alt=""
-                      className="w-[100%]  h-[100%]  hover:scale-110  transition duration-300 ease-in-out "
+                      className="w-[100%]  h-[100%]  hover:scale-105  transition duration-300 ease-in-out "
                     />
                   </div>
 
@@ -64,10 +64,24 @@ const Projects = ({ projectsRef }: any) => {
                     </div>
                     <div className="flex gap-5">
                       <button className="px-2 py-1 rounded-md text-xs border bg-purple-500 text-white">
-                        Demo
+                        <a
+                          href={card.liveLink==null ? "#" : card.liveLink}
+                          className={`${
+                            card.liveLink == null ? "cursor-not-allowed " : ""
+                          }`}
+                        >
+                          Demo
+                        </a>
                       </button>
                       <button className="px-2 py-1 rounded-md text-xs border bg-purple-500 text-white">
-                        Github
+                        <a
+                          href={card.githubLink}
+                          className={`${
+                            card.githubLink == null ? "pointer-events-none" : ""
+                          }`}
+                        >
+                          Github
+                        </a>
                       </button>
                     </div>
                   </div>

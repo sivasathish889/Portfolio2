@@ -1,5 +1,5 @@
 import { useTheme } from "../context/ThemeProvider";
-import Spline from "@splinetool/react-spline";
+import contactUs from "../assets/images/contactUs.webp";
 import { toast } from "react-toastify";
 const ContactUs = ({ contactRef }: any) => {
   const { theme } = useTheme();
@@ -10,7 +10,7 @@ const ContactUs = ({ contactRef }: any) => {
     const formData = new FormData(form);
     formData.append("subject", "Contact Form Submission from Portfolio");
     const data = Object.fromEntries(formData);
-    await fetch("https://mailer-znjv.onrender.com/send-mail", {
+    fetch("https://mailer-znjv.onrender.com/send-mail", {
       body: JSON.stringify(data),
       method: "POST",
       headers: {
@@ -19,6 +19,7 @@ const ContactUs = ({ contactRef }: any) => {
     })
       .then((res) => res.json())
       .then(() => {
+        console.log("Email sent successfully");
         toast.success("Thank you for your message!");
       })
       .catch((err) => {
@@ -27,8 +28,10 @@ const ContactUs = ({ contactRef }: any) => {
   };
   return (
     <div
-      className={`h-[100vh] w-full flex flex-col gap-3 px-2 lg:px-4 backdrop-blur-xl ${
-        theme == "light" ? "text-white" : "text-black"
+      className={`h-screen w-full flex flex-col gap-3 px-2 lg:px-4 backdrop-blur-xl ${
+        theme == "light"
+          ? "text-black placeholder:text-black"
+          : "text-white placeholder:text-white"
       }`}
       ref={contactRef}
     >
@@ -43,7 +46,7 @@ const ContactUs = ({ contactRef }: any) => {
         </p>
       </div>
       <div
-        className="h-[90vh] flex justify-around items-center flex-col lg:flex-row m-4  lg:px-1"
+        className="h-[100vh] flex justify-around items-center flex-col lg:flex-row m-4  lg:px-1"
         onSubmit={handleSubmit}
       >
         <form
@@ -79,10 +82,7 @@ const ContactUs = ({ contactRef }: any) => {
         </form>
 
         <div className="right-container lg:w-[40%] lg:h-full w-[100%] h-full flex justify-center items-center">
-          <Spline
-            scene="https://prod.spline.design/6C-3MoVAUVWvLx8k/scene.splinecode"
-            className="w-full h-full"
-          />
+          <img src={contactUs} alt="" />
         </div>
       </div>
     </div>
