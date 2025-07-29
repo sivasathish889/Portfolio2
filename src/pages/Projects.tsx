@@ -1,9 +1,7 @@
-"use client";
-
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
-import { useTheme } from "../context/ThemeProvider";
-import { projectImage } from "../assets/assets";
+import { useTheme } from "../context/ThemeProvider.tsx";
+import { projectImage } from "../assets/assets.tsx";
 
 const Projects = ({ projectsRef }: any) => {
   const { theme } = useTheme();

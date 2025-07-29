@@ -1,15 +1,15 @@
 import { useRef } from "react";
-import { useTheme } from "./context/ThemeProvider";
-import About from "./pages/About";
-import Certificates from "./pages/Certificates";
-import ContactUs from "./pages/ContactUs";
-import Hero from "./pages/Hero";
-import Projects from "./pages/Projects";
-import Skills from "./pages/Skills";
+import { useTheme } from "./context/ThemeProvider.tsx";
+import About from "./pages/About.tsx";
+import Certificates from "./pages/Certificates.tsx";
+import ContactUs from "./pages/ContactUs.tsx";
+import Hero from "./pages/Hero.tsx";
+import Projects from "./pages/Projects.tsx";
+import Skills from "./pages/Skills.tsx";
 import background from "./assets/images/backgorund.webp";
-import CommonNav from "./components/CommonNav";
+import CommonNav from "./components/CommonNav.tsx";
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
+import "aos/dist/aos.css"; 
 AOS.init();
 
 const App = () => {

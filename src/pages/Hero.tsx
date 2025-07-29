@@ -1,10 +1,8 @@
-import NavBar from "../components/NavBar";
-import instagramIcon from "../assets/AnimatedIcon/instagram.gif";
-import linkedIcon from "../assets/AnimatedIcon/linkedin.gif";
-import githubIcon from "../assets/AnimatedIcon/github.gif";
-import myImage from "../assets/images/MyImage.webp";
-import { ArrowDownToDot } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ArrowDownToDot } from "lucide-react";
+import NavBar from "../components/NavBar.tsx";
+import myImage from "../assets/images/MyImage.webp";
+import { social_icons } from "../assets/assets.tsx";
 import resume from "../assets/Siva_Sathish_Resume.pdf";
 const Hero = ({ dropDownRef, navBarRef }: any) => {
   const [stickyNav, setStickyNav] = useState<number>(0);
@@ -68,7 +66,7 @@ const Hero = ({ dropDownRef, navBarRef }: any) => {
                   className="cusor-pointer z-10"
                 >
                   <img
-                    src={githubIcon}
+                    src={social_icons.github}
                     alt="github icon"
                     className="h-12 w-12 lg:h-14 lg:w-14 cursor-pointer"
                     data-aos="fade-left"
@@ -83,7 +81,7 @@ const Hero = ({ dropDownRef, navBarRef }: any) => {
                   target="_blank"
                 >
                   <img
-                    src={linkedIcon}
+                    src={social_icons.linkedin}
                     alt="linked icon"
                     className="h-12 w-12 lg:h-14 lg:w-14 c"
                     data-aos="fade-left"
@@ -98,7 +96,7 @@ const Hero = ({ dropDownRef, navBarRef }: any) => {
                   target="_blank"
                 >
                   <img
-                    src={instagramIcon}
+                    src={social_icons.instagram}
                     alt="instagram icon"
                     className="h-12 w-12 lg:h-14 lg:w-14 "
                     data-aos="fade-left"

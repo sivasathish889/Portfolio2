@@ -1,4 +1,4 @@
-import { useTheme } from "../context/ThemeProvider";
+import { useTheme } from "../context/ThemeProvider.tsx";
 import contactUs from "../assets/images/contactUs.webp";
 import { toast } from "react-toastify";
 const ContactUs = ({ contactRef }: any) => {

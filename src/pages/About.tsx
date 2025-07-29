@@ -1,6 +1,6 @@
 import myImage2 from "../assets/images/myImage2.webp";
-import CountUp from "../components/CountUp";
-import { useTheme } from "../context/ThemeProvider";
+import CountUp from "../components/CountUp.tsx";
+import { useTheme } from "../context/ThemeProvider.tsx";
 
 const About = ({ dropDownRef, aboutRef }: any) => {
   const { theme } = useTheme();

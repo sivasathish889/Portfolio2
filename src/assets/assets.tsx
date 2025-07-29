@@ -33,13 +33,16 @@ import outpass from "./images/outpass.jpg";
 import thirukural from "./images/Thirukural Book.webp";
 import ecommerce from "./images/e-commerce.webp";
 import glassNav from "./images/glass navbar.webp";
-type projectImage = {
-  title: string;
-  image: string;
-  description: string;
-  technologies: string[];
-  liveLink: string | null;
-  githubLink: string;
+
+import instagramIcon from "../assets/AnimatedIcon/instagram.gif";
+import linkedIcon from "../assets/AnimatedIcon/linkedin.gif";
+import githubIcon from "../assets/AnimatedIcon/github.gif";
+import type { projectImageType, social_iconsType } from "./assets.type.ts";
+
+export const social_icons: social_iconsType = {
+  instagram: instagramIcon,
+  linkedin: linkedIcon,
+  github: githubIcon,
 };
 export const skillIcons = {
   frontend: {
@@ -194,14 +197,15 @@ export const skillIcons = {
   },
 };
 
-export const projectImage: projectImage[] = [
+export const projectImage: projectImageType[] = [
   {
     title: "Outpass",
     image: outpass,
     description:
       "A digital system for managing hostel outpass requests, allowing students to apply and administrators to review and approve them efficiently.",
     technologies: ["Expo", "Express.js", "Tailwind", "MongoDB"],
-    liveLink: 'https://github.com/sivasathish889/Portfolio2/blob/main/Files/certificates/course_complete.jpg',
+    liveLink:
+      "https://github.com/sivasathish889/Portfolio2/blob/main/Files/certificates/course_complete.jpg",
     githubLink: "https://github.com/sivasathish889/hostal_outpass_frontend",
   },
   {
@@ -244,7 +248,7 @@ export const projectImage: projectImage[] = [
     image: glassNav,
     description:
       "A simple and user-friendly calculator that performs basic arithmetic operations, making it a convenient tool for quick calculations.",
-    technologies: ["React.js", "Tailwind",],
+    technologies: ["React.js", "Tailwind"],
     liveLink: null,
     githubLink: "https://github.com/sivasathish889/glass-nav-bar",
   },
