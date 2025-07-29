@@ -9,6 +9,7 @@ const Certificates = ({ certificatesRef }: any) => {
       subtitle: "CSC",
       description:
         "Learn Both Frontend and Backend Development using Python and Django",
+      link: "https://github.com/sivasathish889/Portfolio2/blob/main/Files/certificates/course_complete.jpg",
     },
     {
       year: "Nov 25 - Mar 25",
@@ -16,6 +17,7 @@ const Certificates = ({ certificatesRef }: any) => {
       subtitle: "XDR Technologies and Services",
       description:
         "Gained practical experience in full stack development during the internship period.",
+      link: "https://github.com/sivasathish889/Portfolio2/blob/main/Files/certificates/INTERN%20OFFER%20LETTER-XIN006.pdf",
     },
     {
       year: "Jun 25 - Current",
@@ -23,6 +25,7 @@ const Certificates = ({ certificatesRef }: any) => {
       subtitle: "GenSet AI",
       description:
         "Learned full stack web development and AI agent learning and gained experience in GenSet AI's products and services.",
+      link: "https://github.com/sivasathish889/Portfolio2/blob/main/Files/certificates/Siva%20Sathish%20-%20GetSetAI%20Internship%20Offer%20Letter.pdf",
     },
   ];
   return (

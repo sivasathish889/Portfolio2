@@ -202,7 +202,7 @@ export const projectImage: projectImage[] = [
     description:
       "A digital system for managing hostel outpass requests, allowing students to apply and administrators to review and approve them efficiently.",
     technologies: ["Expo", "Express.js", "Tailwind", "MongoDB"],
-    liveLink: null,
+    liveLink: 'https://github.com/sivasathish889/Portfolio2/blob/main/Files/certificates/course_complete.jpg',
     githubLink: "https://github.com/sivasathish889/hostal_outpass_frontend",
   },
   {

@@ -44,10 +44,15 @@ const About = ({ dropDownRef, aboutRef }: any) => {
             Engineering, Tindivanam. I&#39;m a passionate{" "}
             <b>Full Stack Developer </b>
             with one year of professional experience and{" "}
-            <b> two completed internships.</b> I specialize in building scalable
-            web and mobile applications using modern technologies. My expertise
-            spans both front-end and back-end development, as well as
-            cross-platform mobile apps.
+            <b> two completed internships.</b> I have honored skills in{" "}
+            <b>
+              {" "}
+              Python, Java, Javascript, React.js, Node.js, Express.js, Django,
+              Spring Boot, Mongo DB, and SQL.{" "}
+            </b>{" "}
+            I specialize in building scalable web and mobile applications using
+            modern technologies. My expertise spans both front-end and back-end
+            development, as well as cross-platform mobile apps.
           </p>
           <div className="flex gap-2">
             <button
@@ -72,7 +77,7 @@ const About = ({ dropDownRef, aboutRef }: any) => {
           <p className="lg:text-lg">Internships</p>
         </div>
         <div className="projects flex flex-col justify-center items-center">
-          <div >
+          <div>
             <CountUp to={25} /> +
           </div>
           <p className="lg:text-lg">Projects</p>
