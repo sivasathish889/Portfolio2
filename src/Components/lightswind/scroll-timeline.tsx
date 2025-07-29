@@ -1,11 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  MotionValue,
-} from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { cn } from "../lib/utils";
 import { Card, CardContent } from "./card";
 import { Calendar } from "lucide-react";
@@ -19,7 +13,7 @@ export interface TimelineEvent {
   description: string;
   icon?: React.ReactNode;
   color?: string;
-  link? : string
+  link?: string;
 }
 
 export interface ScrollTimelineProps {
@@ -72,7 +66,6 @@ export const ScrollTimeline = ({
   animationOrder = "sequential",
   cardAlignment = "alternating",
   lineColor = "bg-primary/30",
-  activeColor = "bg-primary",
   progressIndicator = true,
   cardVariant = "default",
   cardEffect = "none",
@@ -83,14 +76,12 @@ export const ScrollTimeline = ({
   revealAnimation = "fade",
   className = "",
   connectorStyle = "line",
-  perspective = false,
   darkMode = false,
-  smoothScroll = true,
 }: ScrollTimelineProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(-1);
   const timelineRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const {theme} = useTheme()
+  const { theme } = useTheme();
   const { scrollYProgress } = useScroll({
     target: scrollRef,
     offset: ["start start", "end end"],
@@ -205,9 +196,6 @@ export const ScrollTimeline = ({
         : cardAlignment === "left"
         ? "lg:mr-auto lg:ml-0"
         : "lg:ml-auto lg:mr-0";
-    const perspectiveClass = perspective
-      ? "transform transition-transform hover:rotate-y-1 hover:rotate-x-1"
-      : "";
 
     return cn(
       baseClasses,
@@ -245,8 +233,7 @@ export const ScrollTimeline = ({
                   width: progressLineWidth,
                   left: "50%",
                   transform: "translateX(-50%)",
-                  borderRadius:
-                    progressLineCap === "round" ? "9999px" : "0px",
+                  borderRadius: progressLineCap === "round" ? "9999px" : "0px",
                   background: `linear-gradient(to bottom, #22d3ee, #6366f1, #a855f7)`,
                   // Enhanced shadow for a constant glow effect along the path
                   boxShadow: `
@@ -360,7 +347,13 @@ export const ScrollTimeline = ({
                     viewport={{ once: false, margin: "-100px" }}
                     style={parallaxIntensity > 0 ? { y: yOffset } : undefined}
                   >
-                    <Card className={`bg-background  hover:shadow-md hover:-translate-y-1 hover:-translate-x-1 border-2 border-purple-500 backdrop-blur-3xl bg-transparent  hover:shadow-purple-500 ${theme=="light"? " hover:shadow-2xl text-black hover:shadow-violet-500 " :"text-white"}`}>
+                    <Card
+                      className={`bg-background  hover:shadow-md hover:-translate-y-1 hover:-translate-x-1 border-2 border-purple-500 backdrop-blur-3xl bg-transparent  hover:shadow-purple-500 ${
+                        theme == "light"
+                          ? " hover:shadow-2xl text-black hover:shadow-violet-500 "
+                          : "text-white"
+                      }`}
+                    >
                       <CardContent className="p-6">
                         {dateFormat === "badge" ? (
                           <div className="flex items-center mb-2">
@@ -394,7 +387,13 @@ export const ScrollTimeline = ({
                         <p className="text-muted-foreground mb-2">
                           {event.description}
                         </p>
-                      <a href={event.link} target="_blank" className="bg-purple-500 px-2 mt-2 rounded-md py-1 cursor-pointer">View</a>
+                        <a
+                          href={event.link}
+                          target="_blank"
+                          className="bg-purple-500 px-2 mt-2 rounded-md py-1 cursor-pointer"
+                        >
+                          View
+                        </a>
                       </CardContent>
                     </Card>
                   </motion.div>

@@ -3,7 +3,6 @@ import css from "./icons/skills/css.webp";
 import js from "./icons/skills/javascript.webp";
 import react from "./icons/skills/react (1).webp";
 import tailwind from "./icons/skills/tailwind.webp";
-import bootstrap from "./icons/skills/bootstrap-framework-logo.webp";
 import nextjs from "./icons/skills/nextjs_light.webp";
 import expo from "./icons/skills/expo.webp";
 import ts from "./icons/skills/typescript.webp";
