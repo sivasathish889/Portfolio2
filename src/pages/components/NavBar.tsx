@@ -1,5 +1,5 @@
 import { Sun, Moon, Menu } from "lucide-react";
-import { useTheme } from "../context/ThemeProvider";
+import { useTheme } from "../../context/ThemeProvider";
 const NavBar = ({ navBarRef }: any) => {
   const { theme, toggleTheme } = useTheme();
 

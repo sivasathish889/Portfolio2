@@ -7,7 +7,7 @@ import Hero from "./pages/Hero.tsx";
 import Projects from "./pages/Projects.tsx";
 import Skills from "./pages/Skills.tsx";
 import background from "./assets/images/backgorund.webp";
-import CommonNav from "./components/CommonNav.tsx";
+import CommonNav from "./pages/components/CommonNav.tsx";
 import AOS from "aos";
 import "aos/dist/aos.css"; 
 AOS.init();

@@ -1,4 +1,4 @@
-import { ScrollTimeline } from "../components/lightswind/scroll-timeline.tsx";
+import { ScrollTimeline } from "./components/lightswind/scroll-timeline.tsx";
 import { useTheme } from "../context/ThemeProvider.tsx";
 const Certificates = ({ certificatesRef }: any) => {
   const { theme } = useTheme();

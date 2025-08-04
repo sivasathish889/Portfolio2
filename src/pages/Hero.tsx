@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowDownToDot } from "lucide-react";
-import NavBar from "../components/NavBar.tsx";
+import NavBar from "./components/NavBar.tsx";
 import myImage from "../assets/images/MyImage.webp";
 import { social_icons } from "../assets/assets.tsx";
 import resume from "../assets/Siva_Sathish_Resume.pdf";

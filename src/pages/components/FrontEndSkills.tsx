@@ -1,4 +1,4 @@
-import { skillIcons } from "../assets/assets";
+import { skillIcons } from "../../assets/assets";
 
 const FrontEndSkills = () => {
   return (

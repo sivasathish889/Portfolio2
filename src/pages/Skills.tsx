@@ -1,7 +1,7 @@
 import { useState } from "react";
-import FrontEndSkills from "../components/FrontEndSkills.tsx";
-import BackEndSkills from "../components/BackEndSkills.tsx";
-import ToolSkills from "../components/ToolSkills.tsx";
+import FrontEndSkills from "./components/FrontEndSkills.tsx";
+import BackEndSkills from "./components/BackEndSkills.tsx";
+import ToolSkills from "./components/ToolSkills.tsx";
 import { useTheme } from "../context/ThemeProvider.tsx";
 
 // import { skillIcons } from "../assets/assets";

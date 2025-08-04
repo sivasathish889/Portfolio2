@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { cn } from "../lib/utils";
 import { Card, CardContent } from "./card";
 import { Calendar } from "lucide-react";
-import { useTheme } from "../../context/ThemeProvider";
+import { useTheme } from "../../../context/ThemeProvider";
 
 export interface TimelineEvent {
   id?: string;
