@@ -205,7 +205,7 @@ export const projectImage: projectImageType[] = [
       "A digital system for managing hostel outpass requests, allowing students to apply and administrators to review and approve them efficiently.",
     technologies: ["Expo", "Express.js", "Tailwind", "MongoDB"],
     liveLink:
-      "https://github.com/sivasathish889/Portfolio2/blob/main/Files/certificates/course_complete.jpg",
+      "https://github.com/sivasathish889/Portfolio2/blob/main/Files/Hostal%20Outpass.apk",
     githubLink: "https://github.com/sivasathish889/hostal_outpass_frontend",
   },
   {
@@ -240,7 +240,7 @@ export const projectImage: projectImageType[] = [
     description:
       "A digital book of Thirukkural, a sacred Sanskrit text known for its profound meaning and spiritual significance.",
     technologies: ["React.js", "Tailwind", "API"],
-    liveLink: null,
+    liveLink: "https://thirukural-book-15td.onrender.com",
     githubLink: "https://github.com/sivasathish889/Thirukural_book",
   },
   {

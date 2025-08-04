@@ -1,6 +1,7 @@
 import myImage2 from "../assets/images/myImage2.webp";
 import CountUp from "./components/CountUp.tsx";
 import { useTheme } from "../context/ThemeProvider.tsx";
+import resume from "../assets/Siva_Sathish_Resume.pdf";
 
 const About = ({ dropDownRef, aboutRef }: any) => {
   const { theme } = useTheme();
@@ -57,7 +58,7 @@ const About = ({ dropDownRef, aboutRef }: any) => {
           <div className="flex gap-2">
             <button
               type="button"
-              className={`border-2 border-purple-500 px-7 py-2 rounded-md  bg-purple-500 cursor-pointer hover:text-black  ${
+              className={`border-2 border-purple-500 px-7 py-2 rounded-md z-10 bg-purple-500 cursor-pointer hover:text-black  ${
                 theme == "dark" ? " text-white" : ""
               }`}
               data-aos="fade-top"
@@ -66,7 +67,7 @@ const About = ({ dropDownRef, aboutRef }: any) => {
               data-aos-delay="500"
               data-aos-once={true}
             >
-              Download CV
+              <a href={resume} download={true}>Download CV</a>
             </button>
           </div>
         </div>

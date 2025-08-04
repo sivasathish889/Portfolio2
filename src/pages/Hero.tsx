@@ -106,7 +106,7 @@ const Hero = ({ dropDownRef, navBarRef }: any) => {
                   />
                 </a>
               </div>
-              <div className="only-mobile flex justify-center items-center gap-4">
+              <div className="only-mobile flex justify-center items-center gap-4 z-10">
                 <button
                   className="px-4 py-2 border-2 rounded-md border-purple-500 hover:bg-purple-500 cursor-pointer hover:text-black"
                   data-aos="fade-left"
@@ -120,7 +120,7 @@ const Hero = ({ dropDownRef, navBarRef }: any) => {
                   Hire Me
                 </button>
                 <button
-                  className="px-4 py-2 border-2 rounded-md border-purple-500 hover:bg-purple-500 cursor-pointer hover:text-black "
+                  className="px-4 py-2 border-2 rounded-md border-purple-500 hover:bg-purple-500 cursor-pointer hover:text-black z-10"
                   data-aos="fade-left"
                   data-aos-duration="2000"
                   data-aos-anchor-placement="center-bottom"

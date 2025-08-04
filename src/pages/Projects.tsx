@@ -67,6 +67,7 @@ const Projects = ({ projectsRef }: any) => {
                           className={`${
                             card.liveLink == null ? "cursor-not-allowed " : ""
                           }`}
+                          target="_blank"
                         >
                           Demo
                         </a>
@@ -77,6 +78,7 @@ const Projects = ({ projectsRef }: any) => {
                           className={`${
                             card.githubLink == null ? "pointer-events-none" : ""
                           }`}
+                          target="_blank"
                         >
                           Github
                         </a>
