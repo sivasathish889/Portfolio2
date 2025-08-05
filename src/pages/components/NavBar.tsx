@@ -1,7 +1,9 @@
 import { Sun, Moon, Menu } from "lucide-react";
 import { useTheme } from "../../context/ThemeProvider";
+import { useState } from "react";
 const NavBar = ({ navBarRef }: any) => {
   const { theme, toggleTheme } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navBarItems = {
     hero: {
@@ -69,8 +71,30 @@ const NavBar = ({ navBarRef }: any) => {
       </div>
       {/* mobile nav bar */}
       <div className="div lg:hidden ">
-        <div className="  lg:visible">
+        <div className="lg:visible" onClick={() => setMenuOpen(!menuOpen)}>
           <Menu />
+        </div>
+        <div
+          className={`mobile-nav-bar fixed top-20 left-0 right-0 z-50 transition-all ease-in-out duration-300 backdrop-blur-md bg-[#1D2428]/60 ${
+            menuOpen ? "block opacity-100" : "hidden opacity-0"
+          }`}
+        >
+          <div className="container mx-auto px-4 py-2">
+            <ul className="flex flex-col gap-4">
+              {Object.entries(navBarItems).map(([_, value], index) => (
+                <li
+                  key={index}
+                  onClick={() =>
+                    value.ref.current.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  <a className="block text-xl font-semibold text-card-foreground hover:underline">
+                    {value.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
