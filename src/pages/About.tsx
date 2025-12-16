@@ -1,4 +1,4 @@
-import myImage2 from "../assets/images/myImage2.webp";
+import myImage2 from "../assets/images/aboutImage.jpg";
 import CountUp from "./components/CountUp.tsx";
 import { useTheme } from "../context/ThemeProvider.tsx";
 import resume from "../assets/Siva_Sathish_Resume.pdf";
@@ -27,7 +27,7 @@ const About = ({ dropDownRef, aboutRef }: any) => {
         <div className="left-content w-full lg:w-[50%] h-[40%] lg:h-[80%]  object-contain flex justify-center items-center">
           <img
             src={myImage2}
-            className="w-[70%] h-full lg:w-[50%] object-cover rounded-3xl no-scrollbar"
+            className="w-[80%] h-full md:h-[70%] lg:w-[60%] object-cover rounded-3xl no-scrollbar"
             alt="image2"
             data-aos="fade-right"
             data-aos-duration="2000"

@@ -22,9 +22,8 @@ const Projects = ({ projectsRef }: any) => {
       >
         <p className="text-5xl md:text-7xl text-purple-500">Projects</p>
         <p
-          className={`font-bold tracking-widest text-6xl md:text-9xl text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${
-            theme !== "light" ? "font-dark-outline-2" : "font-light-outline-2"
-          }`}
+          className={`font-bold tracking-widest text-6xl md:text-9xl text-transparent absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${theme !== "light" ? "font-dark-outline-2" : "font-light-outline-2"
+            }`}
         >
           PROJECTS
         </p>
@@ -63,10 +62,9 @@ const Projects = ({ projectsRef }: any) => {
                     <div className="flex gap-5">
                       <button className="px-2 py-1 rounded-md text-xs border bg-purple-500 text-white">
                         <a
-                          href={card.liveLink==null ? "#" : card.liveLink}
-                          className={`${
-                            card.liveLink == null ? "cursor-not-allowed " : ""
-                          }`}
+                          href={card.liveLink == null ? "#" : card.liveLink}
+                          className={`${card.liveLink == null ? "cursor-not-allowed " : ""
+                            }`}
                           target="_blank"
                         >
                           Demo
@@ -75,9 +73,8 @@ const Projects = ({ projectsRef }: any) => {
                       <button className="px-2 py-1 rounded-md text-xs border bg-purple-500 text-white">
                         <a
                           href={card.githubLink}
-                          className={`${
-                            card.githubLink == null ? "pointer-events-none" : ""
-                          }`}
+                          className={`${card.githubLink == null ? "pointer-events-none" : ""
+                            }`}
                           target="_blank"
                         >
                           Github

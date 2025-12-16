@@ -44,19 +44,21 @@ const Hero = ({ dropDownRef, navBarRef }: any) => {
         <div className=" lg:p-3 flex flex-col ">
           <hr className="border w-full mb-14 not-lg:hidden " />
           <div className="not-md:space-y-10 not-md:mb-20 lg:flex lg:justify-between items-center">
-            <div className=" self-end justify-center flex not-sm:text-xs ">
-              {text.map((char, i) => (
+            <div className=" self-end justify-center flex not-sm:text-xs flex-col">
+              <div className="w-full flex justify-center items-center">{text.map((char, i) => (
                 <span
                   key={i}
                   data-aos="fade-in"
                   data-aos-delay={i * 100}
                   data-aos-duration="1000"
                   data-aos-anchor-placement="center-bottom"
-                  className="text-xs lg:text-lg font-extralight"
+                  className="text-xs lg:text-lg font-extralight text-center"
                 >
                   {char + "\u00A0"}
                 </span>
-              ))}
+              ))}</div>
+              <p className="text-center text-sm block lg:hidden">Specializing in <span className="font-bold text-purple-700  font-light-outline-4">React, React Native, Next.js Node.js, and Django</span> — turning ideas into scalable, user-friendly applications
+              </p>
             </div>
             <div className="left-container self-end flex justify-center not-lg:space-x-5 flex-col items-center not-lg:gap-6 gap-2">
               <div className="flex gap-x-3">
