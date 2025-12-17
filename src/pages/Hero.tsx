@@ -14,7 +14,9 @@ const Hero = ({ dropDownRef, navBarRef }: any) => {
 
   useEffect(() => {
     window.addEventListener("scroll", stickNavbar);
+    return () => window.removeEventListener("scroll", stickNavbar)
   }, []);
+  
   return (
     <>
       <div
